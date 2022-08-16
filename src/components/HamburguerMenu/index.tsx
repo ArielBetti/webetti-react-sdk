@@ -30,9 +30,9 @@ const HamburguerMenu = ({
     <ThemeProvider theme={themeSelect}>
       <Atom.HamburguerMenuToggle onClick={() => setOpen(!open)}>
         {open ? (
-          <MdMenuOpen color={themeSelect?.font?.colors?.contrast} size="20px" />
+          <MdMenuOpen color={themeSelect?.font?.colors?.inverse} size="20px" />
         ) : (
-          <MdMenu color={themeSelect?.font?.colors?.contrast} size="20px" />
+          <MdMenu color={themeSelect?.font?.colors?.inverse} size="20px" />
         )}
       </Atom.HamburguerMenuToggle>
       <Atom.HamburguerMenuCollapse isOpen={open}>
