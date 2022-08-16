@@ -1,0 +1,17 @@
+node_modules
+**coverage
+.vscode
+
+# build files
+/components
+/hooks
+/index.js
+/index.d.ts
+/theme.js
+/theme.d.ts
+
+# log files
+*.log
+
+# lock files
+yarn.lock
