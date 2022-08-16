@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
-import { ITheme } from "../../theme";
+import { IWebettiTheme } from "../../theme/types";
 
 export interface IWebettiHeaderProps {
-  theme: ITheme;
+  theme?: IWebettiTheme;
   children: ReactNode;
 }
 
 export interface IWebettiNavigationItems {
   hasHamburguerOpen: boolean,
   setBackground: boolean,
-  theme: ITheme,
+  theme: IWebettiTheme,
 }

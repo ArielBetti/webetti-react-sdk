@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ITheme } from "../../theme";
+import { IWebettiTheme } from "../../theme/types";
 import { IWebettiNavigationItems } from "./types";
 
 export const NavigationContainer = styled.nav`
@@ -59,5 +59,5 @@ export const NavigationItems = styled.div`
       ? "0px 0px 10px 0px rgba(0, 0, 0, 0.5)"
       : "none"};
   transition: background-color
-    ${({ theme }: { theme: ITheme }) => theme?.transitions.time};
+    ${({ theme }: { theme: IWebettiTheme }) => theme?.transitions.time};
 `;

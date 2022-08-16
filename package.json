@@ -1,6 +1,6 @@
 {
   "name": "webetti-react-sdk",
-  "version": "1.0.1-beta",
+  "version": "1.0.2-beta",
   "description": "This package aims to accelerate the creation of robust react applications, it has generic components with theme integration.",
   "license": "MIT",
   "author": "ArielBetti",
@@ -13,14 +13,16 @@
   "clearpath": [
     "components",
     "hooks",
+    "index.d.ts",
     "index.js",
-    "index.d.ts"
+    "theme"
   ],
   "files": [
     "components",
     "hooks",
+    "index.d.ts",
     "index.js",
-    "index.d.ts"
+    "theme"
   ],
   "devDependencies": {
     "@types/jest": "^27.0.1",

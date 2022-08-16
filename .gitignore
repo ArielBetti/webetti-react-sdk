@@ -9,6 +9,7 @@ node_modules
 /index.d.ts
 /theme.js
 /theme.d.ts
+/theme
 
 # log files
 *.log

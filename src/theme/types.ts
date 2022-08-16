@@ -1,4 +1,4 @@
-export interface ITheme {
+export interface IWebettiTheme {
   colors: {
     background: string;
     neutral: {
