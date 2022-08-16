@@ -9,5 +9,5 @@ export interface IWebettiHeaderProps {
 export interface IWebettiNavigationItems {
   hasHamburguerOpen: boolean,
   setBackground: boolean,
-  theme: IWebettiTheme,
+  theme?: IWebettiTheme,
 }
