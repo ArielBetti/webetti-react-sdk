@@ -18,7 +18,11 @@ import * as Atom from "./atoms";
 import { defaultTheme } from "../../theme/default";
 
 // ::
-const Header = ({ theme, children }: IWebettiHeaderProps) => {
+const Header = ({
+  children,
+  theme,
+  trackHeaderActive,
+}: IWebettiHeaderProps) => {
   // local: states
   const [scrollValue, setScrollValue] = useState<number>(0);
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
@@ -50,7 +54,7 @@ const Header = ({ theme, children }: IWebettiHeaderProps) => {
     <ThemeProvider theme={themeSelect}>
       <Atom.NavigationContainer>
         <Atom.NavigationItems
-          hasHamburguerOpen={menuToggle}
+          hasHamburguerOpen={trackHeaderActive || menuToggle}
           setBackground={scrollValue > 10}
         >
           <Container>

@@ -1,6 +1,6 @@
 {
   "name": "webetti-react-sdk",
-  "version": "1.0.6-beta",
+  "version": "1.0.8-beta",
   "description": "This package aims to accelerate the creation of robust react applications, it has generic components with theme integration.",
   "license": "MIT",
   "author": "ArielBetti",
@@ -38,6 +38,8 @@
   },
   "scripts": {
     "build": "npm run clean && tsc --project tsconfig.json",
-    "clean": "clear-path"
+    "clean": "clear-path",
+    "publish:beta": "npm run clean && tsc --project tsconfig.json && npm publish --tag beta",
+    "publish": "npm run clean && tsc --project tsconfig.json && npm publish"
   }
 }

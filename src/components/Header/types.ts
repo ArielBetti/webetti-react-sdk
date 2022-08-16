@@ -3,6 +3,7 @@ import { IWebettiTheme } from "../../theme/types";
 
 export interface IWebettiHeaderProps {
   theme?: IWebettiTheme;
+  trackHeaderActive?: boolean;
   children: ReactNode;
 }
 
