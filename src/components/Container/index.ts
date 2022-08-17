@@ -14,21 +14,21 @@ export const Container = styled.div`
   max-width: 1320px;
   padding: 0px;
   @media (max-width: ${({ theme }: { theme: IWebettiTheme }) =>
-      theme?.breakpoints.xl}) {
+      theme?.breakpoints?.xl}) {
     max-width: 1140px;
     padding: 0px 25px;
   }
   @media (max-width: ${({ theme }: { theme: IWebettiTheme }) =>
-      theme?.breakpoints.lg}) {
+      theme?.breakpoints?.lg}) {
     max-width: 960px;
   }
   @media (max-width: ${({ theme }: { theme: IWebettiTheme }) =>
-      theme?.breakpoints.md}) {
+      theme?.breakpoints?.md}) {
     max-width: 720px;
     padding: 0px 15px;
   }
   @media (max-width: ${({ theme }: { theme: IWebettiTheme }) =>
-      theme?.breakpoints.sm}) {
+      theme?.breakpoints?.sm}) {
     max-width: 100%;
   }
 `;
