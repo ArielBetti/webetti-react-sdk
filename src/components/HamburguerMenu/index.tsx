@@ -1,44 +1,34 @@
-import { useMemo } from "react";
-import { ThemeProvider } from "styled-components";
-
 // icons
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 
 // atoms: components
 import * as Atom from "./atoms";
 
-// theme
-import { defaultTheme, IWebettiTheme } from "../../theme";
-
 // types
 import { IWebettiHamburguerMenuProps } from "./types";
+import { useWebettiContext } from "../../context";
 
 // ::
 const HamburguerMenu = ({
   children,
   open,
   setOpen,
-  theme,
 }: IWebettiHamburguerMenuProps) => {
-  // theme select
-  const themeSelect = useMemo(
-    (): IWebettiTheme => theme || defaultTheme(),
-    [theme]
-  );
+  const { theme } = useWebettiContext();
 
   return (
-    <ThemeProvider theme={themeSelect}>
+    <>
       <Atom.HamburguerMenuToggle onClick={() => setOpen(!open)}>
         {open ? (
-          <MdMenuOpen color={themeSelect?.font?.colors?.inverse} size="20px" />
+          <MdMenuOpen color={theme?.font?.colors?.inverse} size="20px" />
         ) : (
-          <MdMenu color={themeSelect?.font?.colors?.inverse} size="20px" />
+          <MdMenu color={theme?.font?.colors?.inverse} size="20px" />
         )}
       </Atom.HamburguerMenuToggle>
       <Atom.HamburguerMenuCollapse isOpen={open}>
         {children}
       </Atom.HamburguerMenuCollapse>
-    </ThemeProvider>
+    </>
   );
 };
 
