@@ -1,8 +1,11 @@
 import { createContext, ReactNode, useContext, useMemo } from "react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme, IWebettiTheme } from "../theme";
+import { RecursivePartial } from "../types";
 
-const WebettiContext = createContext<{ theme: IWebettiTheme }>({
+const WebettiContext = createContext<{
+  theme: RecursivePartial<IWebettiTheme>;
+}>({
   theme: defaultTheme(),
 });
 
