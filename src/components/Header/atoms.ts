@@ -49,7 +49,7 @@ export const NavigationItems = styled.div`
     theme,
   }: IWebettiNavigationItems) =>
     setBackground || hasHamburguerOpen
-      ? theme?.colors?.neutral.pure
+      ? theme?.colors?.neutral?.pure
       : "transparent"};
   box-shadow: ${({
     setBackground,
@@ -59,5 +59,5 @@ export const NavigationItems = styled.div`
       ? "0px 0px 10px 0px rgba(0, 0, 0, 0.5)"
       : "none"};
   transition: background-color
-    ${({ theme }: { theme: IWebettiTheme }) => theme?.transitions.time};
+    ${({ theme }: { theme: IWebettiTheme }) => theme?.transitions?.time};
 `;

@@ -36,7 +36,7 @@ const Header = ({ children, trackHeaderActive }: IWebettiHeaderProps) => {
   }, [scrollValue]);
 
   useEffect(() => {
-    if (width > theme?.breakpoints?.md.replace("px", "")) {
+    if (width > theme?.breakpoints?.md?.replace("px", "")) {
       setMenuToggle(false);
     }
   }, [theme?.breakpoints?.md, width]);
