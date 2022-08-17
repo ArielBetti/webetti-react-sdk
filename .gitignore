@@ -10,6 +10,7 @@ node_modules
 /theme.js
 /theme.d.ts
 /theme
+/context
 
 # log files
 *.log

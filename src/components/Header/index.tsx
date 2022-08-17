@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { ThemeProvider } from "styled-components";
 
 // hooks
 import { useWindowDimensions } from "../../hooks";
@@ -9,31 +8,23 @@ import { Container } from "../Container";
 
 // types
 import { IWebettiHeaderProps } from "./types";
-import { IWebettiTheme } from "../../theme/types";
 
 // atom: components
 import * as Atom from "./atoms";
 
 // theme
-import { defaultTheme } from "../../theme/default";
+import { useWebettiContext } from "../../context";
 
 // ::
-const Header = ({
-  children,
-  theme,
-  trackHeaderActive,
-}: IWebettiHeaderProps) => {
+const Header = ({ children, trackHeaderActive }: IWebettiHeaderProps) => {
   // local: states
   const [scrollValue, setScrollValue] = useState<number>(0);
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
 
-  const { width } = useWindowDimensions();
+  // context
+  const { theme } = useWebettiContext();
 
-  // theme select
-  const themeSelect = useMemo(
-    (): IWebettiTheme => theme || defaultTheme(),
-    [theme]
-  );
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     const onScroll = (e: any) => {
@@ -45,24 +36,22 @@ const Header = ({
   }, [scrollValue]);
 
   useEffect(() => {
-    if (width > themeSelect?.breakpoints?.md.replace("px", "")) {
+    if (width > theme?.breakpoints?.md.replace("px", "")) {
       setMenuToggle(false);
     }
   }, [theme?.breakpoints?.md, width]);
 
   return (
-    <ThemeProvider theme={themeSelect}>
-      <Atom.NavigationContainer>
-        <Atom.NavigationItems
-          hasHamburguerOpen={trackHeaderActive || menuToggle}
-          setBackground={scrollValue > 10}
-        >
-          <Container>
-            <Atom.NavigationExtends>{children}</Atom.NavigationExtends>
-          </Container>
-        </Atom.NavigationItems>
-      </Atom.NavigationContainer>
-    </ThemeProvider>
+    <Atom.NavigationContainer>
+      <Atom.NavigationItems
+        hasHamburguerOpen={trackHeaderActive || menuToggle}
+        setBackground={scrollValue > 10}
+      >
+        <Container>
+          <Atom.NavigationExtends>{children}</Atom.NavigationExtends>
+        </Container>
+      </Atom.NavigationItems>
+    </Atom.NavigationContainer>
   );
 };
 
