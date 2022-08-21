@@ -19,7 +19,7 @@ export const DropdownContainer = styled.div`
   }: {
     isOpen: boolean;
     theme: IWebettiTheme;
-  }) => (isOpen ? theme?.colors?.neutral[2] : theme?.colors?.neutral?.pure)};
+  }) => (isOpen ? theme?.colors?.neutral[2] : "transparent")};
   :hover {
     background-color: ${({ theme }: { theme: IWebettiTheme }) =>
       theme?.colors?.neutral[2]};
@@ -33,6 +33,7 @@ export const DropdownContainer = styled.div`
 `;
 
 export const DropdownInfo = styled.div`
+  max-height: 45px;
   border-left: 2px solid
     ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
   display: flex;
@@ -65,9 +66,6 @@ export const DropdownCollapse = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : "0%")};
-  /* border-left: ${({ isOpen }: { isOpen: boolean }) =>
-    isOpen ? "2px" : "0px"}
-    solid ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary}; */
   border-top: none;
   /* overflow: hidden; */
   background-color: ${({ theme }: { theme: IWebettiTheme }) =>
@@ -94,7 +92,8 @@ export const DropdownItem = styled.div`
   cursor: pointer;
   gap: 10px;
   /* border: 1px solid transparent; */
-  border-left: 2px solid red;
+  border-left: 2px solid
+    ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
 
   :hover {
     background-color: ${({ theme }: { theme: IWebettiTheme }) =>

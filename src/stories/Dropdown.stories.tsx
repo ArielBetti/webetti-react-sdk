@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "../theme/default";
 
 import Dropdown from "../components/Dropdown";
+import { Container, Header } from "../components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -43,9 +44,13 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args: any): ReactNode => (
   <ThemeProvider theme={defaultTheme()}>
-    <div style={{ maxWidth: "200px" }}>
-      <Dropdown {...args} />
-    </div>
+    <Header trackHeaderActive={true}>
+      <Container>
+        <div style={{ width: "200px" }}>
+          <Dropdown {...args} />
+        </div>
+      </Container>
+    </Header>
   </ThemeProvider>
 );
 

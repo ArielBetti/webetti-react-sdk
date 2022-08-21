@@ -49,9 +49,7 @@ const Header = ({ children, trackHeaderActive }: IWebettiHeaderProps) => {
         hasHamburguerOpen={trackHeaderActive || menuToggle}
         setBackground={scrollValue > 10}
       >
-        <Container>
           <Atom.NavigationExtends>{children}</Atom.NavigationExtends>
-        </Container>
       </Atom.NavigationItems>
     </Atom.NavigationContainer>
   );
