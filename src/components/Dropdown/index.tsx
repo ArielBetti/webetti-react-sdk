@@ -6,6 +6,7 @@ import { useWebettiContext } from "../../context";
 
 // hooks
 import { useClickOutSideComponent } from "../../hooks";
+import Paragraph from "../Paragraph";
 
 // atoms
 import * as Atom from "./atoms";
@@ -32,32 +33,33 @@ const Dropdown = ({ label, items, avatar }: IWebettiDropdownProps) => {
   useClickOutSideComponent(dropdownRef, onClickOutside);
 
   return (
-    <Atom.DropdownAnchor>
-      <Atom.DropdownContainer
-        ref={dropdownRef}
-        isOpen={toggleOpenDropdown}
-        onClick={() => handleToggleDropdown()}
-      >
+    <Atom.DropdownContainer
+      ref={dropdownRef}
+      isOpen={toggleOpenDropdown}
+      onClick={() => handleToggleDropdown()}
+    >
+      <Atom.DropdownInfo>
         {avatar && <Atom.DropdownAvatar effect="blur" src={avatar} alt="" />}
-        <Atom.DropdownLabel>{label}</Atom.DropdownLabel>
+        <Atom.DropdownLabel>
+          <Paragraph>{label}</Paragraph>
+        </Atom.DropdownLabel>
         <MdArrowDropDown
           className="dropdown-arrow"
           size="20px"
           color={theme?.font?.colors?.contrast}
         />
-        <Atom.DropdownCollapse
-          className="dropdown-open"
-          isOpen={toggleOpenDropdown}
-        >
-          {items?.map((item) => (
+      </Atom.DropdownInfo>
+      <Atom.DropdownCollapse isOpen={toggleOpenDropdown}>
+        {items?.map((item) => (
+          <Atom.DropdownItemsContainer>
             <Atom.DropdownItem onClick={() => item?.action()}>
               {item?.icon}
-              <p>{item?.label}</p>
+              <Paragraph>{item?.label}</Paragraph>
             </Atom.DropdownItem>
-          ))}
-        </Atom.DropdownCollapse>
-      </Atom.DropdownContainer>
-    </Atom.DropdownAnchor>
+          </Atom.DropdownItemsContainer>
+        ))}
+      </Atom.DropdownCollapse>
+    </Atom.DropdownContainer>
   );
 };
 

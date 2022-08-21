@@ -2,20 +2,15 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import styled from "styled-components";
 import { IWebettiTheme } from "../../theme";
 
-export const DropdownAnchor = styled.div`
-  position: relative;
-`;
-
 export const DropdownContainer = styled.div`
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   min-width: 200px;
-  border-left: 2px solid
-    ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
-  transition: linear 0.25s background-color;
-  padding: 5px;
+  transition: background-color
+    ${({ theme }: { theme: IWebettiTheme }) => theme?.transitions?.time};
   flex-wrap: nowrap;
   cursor: pointer;
   background-color: ${({
@@ -24,9 +19,10 @@ export const DropdownContainer = styled.div`
   }: {
     isOpen: boolean;
     theme: IWebettiTheme;
-  }) => (isOpen ? theme?.colors?.neutral[2] : "transparent")};
+  }) => (isOpen ? theme?.colors?.neutral[2] : theme?.colors?.neutral?.pure)};
   :hover {
-    background-color: ${(props) => props?.theme?.colors?.neutral[2]};
+    background-color: ${({ theme }: { theme: IWebettiTheme }) =>
+      theme?.colors?.neutral[2]};
   }
 
   .dropdown-arrow {
@@ -34,6 +30,16 @@ export const DropdownContainer = styled.div`
     transform: ${({ isOpen }: { isOpen: boolean }) =>
       isOpen ? "rotate(180deg)" : "none"};
   }
+`;
+
+export const DropdownInfo = styled.div`
+  border-left: 2px solid
+    ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
 `;
 
 export const DropdownLabel = styled.p`
@@ -48,38 +54,47 @@ export const DropdownCollapse = styled.div`
   position: absolute;
   visibility: ${({ isOpen }: { isOpen: boolean }) =>
     isOpen ? "visible" : "hidden"};
-  transition: 0.45s all ease;
+  transition: ${({ theme }: { theme: IWebettiTheme }) =>
+    theme?.transitions?.time};
   opacity: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? 1 : 0)};
   transition-property: background-color, opacity, height;
   top: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : "0px")};
   left: 0px;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   width: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : "0%")};
-  margin-right: 10px;
-  border: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "1px" : "0px")} solid
-    ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.neutral[2]};
-  border-left: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "2px" : "0px")}
-    solid ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
+  /* border-left: ${({ isOpen }: { isOpen: boolean }) =>
+    isOpen ? "2px" : "0px"}
+    solid ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary}; */
   border-top: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: ${({ theme }: { theme: IWebettiTheme }) =>
     theme?.colors?.neutral[1]};
   cursor: default;
   height: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "auto" : "0px")}; ;
 `;
 
+export const DropdownItemsContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
 export const DropdownItem = styled.div`
   width: 100%;
-  transition: linear 0.25s background-color;
+  transition: ${({ theme }: { theme: IWebettiTheme }) =>
+      theme?.transitions?.time}
+    background-color;
   min-height: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 15px 10px;
+  padding: 5px 10px;
   cursor: pointer;
   gap: 10px;
+  /* border: 1px solid transparent; */
+  border-left: 2px solid red;
 
   :hover {
     background-color: ${({ theme }: { theme: IWebettiTheme }) =>
