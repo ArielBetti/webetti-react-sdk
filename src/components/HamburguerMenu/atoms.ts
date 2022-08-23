@@ -21,8 +21,8 @@ export const HamburguerMenuCollapse = styled.div`
   visibility: ${({ isOpen }: IWebettiHamburguerMenuCollapse) =>
     isOpen ? "visible" : "hidden"};
   opacity: ${({ isOpen }: IWebettiHamburguerMenuCollapse) => (isOpen ? 1 : 0)};
-  position: fixed;
-  top: 60px;
+  position: absolute;
+  top: 100%;
   right: 0;
   height: 100%;
   background-color: ${({ theme }: { theme: IWebettiTheme }) =>

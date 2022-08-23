@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { IWebettiTheme } from "../../theme";
 
 export const Container = styled.div`
-  position: relative;
   top: 0;
   left: 0;
   display: flex;
