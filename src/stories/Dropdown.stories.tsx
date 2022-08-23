@@ -1,10 +1,9 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { MdPerson } from "react-icons/md";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "../theme/default";
 
 import Dropdown from "../components/Dropdown";
 import { Container, Header } from "../components";
+import DevProvider from "../dev__provider";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -43,7 +42,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args: any): ReactNode => (
-  <ThemeProvider theme={defaultTheme()}>
+  <DevProvider>
     <Header trackHeaderActive={true}>
       <Container>
         <div style={{ width: "200px" }}>
@@ -51,7 +50,7 @@ const Template = (args: any): ReactNode => (
         </div>
       </Container>
     </Header>
-  </ThemeProvider>
+  </DevProvider>
 );
 
 export const DropdownComponent: any = Template.bind({});

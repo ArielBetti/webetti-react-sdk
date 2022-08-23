@@ -36,6 +36,7 @@ export const DropdownInfo = styled.div`
   max-height: 45px;
   border-left: 2px solid
     ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
+  min-height: 55px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -88,7 +89,7 @@ export const DropdownItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 5px 10px;
+  padding: 15px 10px;
   cursor: pointer;
   gap: 10px;
   /* border: 1px solid transparent; */
