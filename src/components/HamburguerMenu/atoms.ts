@@ -24,7 +24,7 @@ export const HamburguerMenuCollapse = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
-  height: 100%;
+  min-height: 100vh;
   background-color: ${({ theme }: { theme: IWebettiTheme }) =>
     theme?.colors?.neutral?.pure};
   min-width: ${({ isOpen }: IWebettiHamburguerMenuCollapse) =>
