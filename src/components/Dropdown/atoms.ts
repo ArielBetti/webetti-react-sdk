@@ -1,6 +1,7 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import styled from "styled-components";
 import { IWebettiTheme } from "../../theme";
+import { IWebettiDropdownAvatarRadius } from "./types";
 
 export const DropdownContainer = styled.div`
   position: relative;
@@ -102,8 +103,25 @@ export const DropdownItem = styled.div`
   }
 `;
 
+const changeBorderRadius = (radius: IWebettiDropdownAvatarRadius) => {
+  switch (radius) {
+    case "circle":
+      return "100%";
+    case "rounded":
+      return "6px";
+    case "square":
+      return "0px";
+    default:
+      return "100%";
+  }
+};
+
 export const DropdownAvatar = styled(LazyLoadImage)`
   width: 45px;
   height: 45px;
-  border-radius: 100%;
+  border-radius: ${({
+    radius,
+  }: {
+    radius: IWebettiDropdownAvatarRadius | any;
+  }) => changeBorderRadius(radius)};
 `;

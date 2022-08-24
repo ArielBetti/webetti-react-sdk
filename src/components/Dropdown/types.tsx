@@ -4,6 +4,7 @@ export interface IWebettiDropdownProps {
   avatar?: string;
   label: string;
   items: IWebettiDropdownItem[];
+  avatarRadius?: IWebettiDropdownAvatarRadius,
 }
 
 export interface IWebettiDropdownItem {
@@ -11,3 +12,5 @@ export interface IWebettiDropdownItem {
   label: string;
   action(): any;
 }
+
+export type IWebettiDropdownAvatarRadius = "circle" | "rounded" | "square";

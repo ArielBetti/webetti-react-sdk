@@ -14,7 +14,12 @@ import * as Atom from "./atoms";
 // types
 import { IWebettiDropdownProps } from "./types";
 
-const Dropdown = ({ label, items, avatar }: IWebettiDropdownProps) => {
+const Dropdown = ({
+  avatar,
+  avatarRadius,
+  items,
+  label,
+}: IWebettiDropdownProps) => {
   const { theme } = useWebettiContext();
 
   const dropdownRef = useRef(null);
@@ -39,7 +44,14 @@ const Dropdown = ({ label, items, avatar }: IWebettiDropdownProps) => {
       onClick={() => handleToggleDropdown()}
     >
       <Atom.DropdownInfo>
-        {avatar && <Atom.DropdownAvatar effect="blur" src={avatar} alt="" />}
+        {avatar && (
+          <Atom.DropdownAvatar
+            radius={avatarRadius}
+            effect="blur"
+            src={avatar}
+            alt=""
+          />
+        )}
         <Atom.DropdownLabel>
           <Paragraph>{label}</Paragraph>
         </Atom.DropdownLabel>
