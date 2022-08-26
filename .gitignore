@@ -13,6 +13,7 @@ node_modules
 /context
 /types
 /stories
+/dev__provider
 
 # log files
 *.log

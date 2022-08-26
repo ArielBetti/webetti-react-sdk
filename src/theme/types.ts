@@ -13,6 +13,7 @@ export interface IWebettiTheme {
       warning: string;
       error: string;
       success: string;
+      info: string;
     };
   };
   font: {

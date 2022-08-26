@@ -2,31 +2,32 @@ import { IWebettiTheme } from "./types";
 
 export const defaultTheme = (): IWebettiTheme => ({
   colors: {
-    background: "#180F20",
+    background: "#FAFAFA",
     neutral: {
-      pure: "#0E0315",
-      1: "#12005e",
-      2: "#4a148c",
-      3: "#7b1fa2",
+      pure: "#f5f5f5",
+      1: "#eeeeee",
+      2: "#e0e0e0",
+      3: "#aeaeae",
     },
-    primary: "#FF6D00",
+    primary: "#ff8a80",
     secondary: "#d81b60",
     feedback: {
       error: "#cc0000",
       warning: "#ff8800",
       success: "#007e33",
+      info: "#0d47a1",
     },
   },
   font: {
     colors: {
-      contrast: "#FF6D00",
-      1: "#fafafa",
-      2: "#f5f5f5",
-      3: "eeeeee",
+      contrast: "#1e88e5",
+      1: "#212121",
+      2: "#1b1b1b",
+      3: "#424242",
       dark: "#000",
       white: "#FFF",
-      inverse: "#212121",
-      pure: "#FFF",
+      inverse: "#FFF",
+      pure: "#000",
     },
   },
   breakpoints: {

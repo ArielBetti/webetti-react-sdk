@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import { IWebettiTheme } from "../theme";
 
 export const ResetCSS = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -54,4 +55,20 @@ export const ResetCSS = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+`;
+
+export const DevTheme = styled.div`
+  background-color: ${({ theme }: { theme: IWebettiTheme }) =>
+    theme?.colors?.background};
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0px;
+  border: 1px solid
+    ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.neutral?.[3]};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  border-radius: 6px;
 `;
