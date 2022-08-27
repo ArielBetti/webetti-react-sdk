@@ -6,6 +6,7 @@ import HamburguerMenu from "./HamburguerMenu";
 import Header from "./Header";
 import Heading from "./Heading";
 import Input from "./Input";
+import Modal from "./Modal";
 import Paragraph from "./Paragraph";
 
 export {
@@ -17,5 +18,6 @@ export {
   Header,
   Heading,
   Input,
+  Modal,
   Paragraph,
 };
