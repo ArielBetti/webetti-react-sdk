@@ -45,7 +45,9 @@ const Modal = ({
           />
         </Atom.ModalClose>
         <Atom.ModalInfo>
-          <Atom.ModalTitle>{title}</Atom.ModalTitle>
+          <Atom.ModalHeader>
+            <Atom.ModalTitle variant="heading-6">{title}</Atom.ModalTitle>
+          </Atom.ModalHeader>
           <Atom.ModalDescription>{children}</Atom.ModalDescription>
         </Atom.ModalInfo>
         {actionButton && (

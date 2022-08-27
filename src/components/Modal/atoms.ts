@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Paragraph from "../Paragraph";
+import Heading from "../Heading";
 
 export const ModalBackDrop = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${(props) => `${props.theme.colors?.neutral?.pure}4D`};
+  background-color: ${(props) => `${props.theme.colors?.neutral?.pure}B3`};
   position: fixed;
   left: 0;
   top: 0;
@@ -37,7 +37,11 @@ export const ModalContainer = styled.div`
   }
 `;
 
-export const ModalTitle = styled(Paragraph)`
+export const ModalHeader = styled.div`
+  margin-bottom: 15px;
+`;
+
+export const ModalTitle = styled(Heading)`
   font-weight: bold;
   gap: 10px;
   width: 100%;

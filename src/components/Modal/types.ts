@@ -5,6 +5,6 @@ export interface IWebettiModalProps {
   setOpen: Dispatch<SetStateAction<boolean>>;
   title: string | ReactNode;
   children: ReactNode;
-  textButton: string;
+  textButton?: string;
   actionButton?: (param?: any) => void | any;
 }
