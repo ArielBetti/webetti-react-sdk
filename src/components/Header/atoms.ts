@@ -42,7 +42,7 @@ export const NavigationItems = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  padding: 5px 0px;
+  padding: 10px 0px;
   background-color: ${({
     setBackground,
     hasHamburguerOpen,
