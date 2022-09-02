@@ -58,7 +58,7 @@ const Dropdown = ({
         <MdArrowDropDown
           className="dropdown-arrow"
           size="20px"
-          color={theme?.font?.colors?.contrast}
+          color={theme?.colors?.primary}
         />
       </Atom.DropdownInfo>
       <Atom.DropdownCollapse isOpen={toggleOpenDropdown}>
