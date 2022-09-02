@@ -13,6 +13,7 @@ export default {
     text: "teste",
     disabled: false,
     onClick: () => console.log("teste"),
+    bold: true,
   },
 };
 
@@ -32,6 +33,7 @@ ButtonComponent.args = {
   disabled: false,
   onClick: () => console.log("teste"),
   variant: "secondary",
+  bold: true,
   children: (
     <>
       <MdPerson size="20px" />

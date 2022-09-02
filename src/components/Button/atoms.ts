@@ -35,6 +35,7 @@ export const changeFeedback = (
 };
 
 export const Button = styled.button<Partial<IWebettiButtonProps>>`
+  font-weight: ${(props) => props?.bold ? 'bold' : 'normal'};
   background-color: ${(props) => changeFeedback(props?.theme, props?.feedback)};
   color: ${(props) => changeTextColor(props?.theme, props?.textColor)};
   font-size: 16px;
@@ -59,6 +60,7 @@ export const Button = styled.button<Partial<IWebettiButtonProps>>`
 `;
 
 export const SecondaryButton = styled.button<Partial<IWebettiButtonProps>>`
+  font-weight: ${(props) => props?.bold ? 'bold' : 'normal'};
   background-color: transparent;
   color: ${(props) => changeTextColor(props?.theme, props?.textColor)};
   font-size: 16px;

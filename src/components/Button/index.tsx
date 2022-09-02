@@ -10,6 +10,7 @@ const Button: FC<IWebettiButtonProps> = ({
   onClick,
   feedback,
   variant,
+  bold,
   ...rest
 }) => {
   if (variant === "secondary") {
@@ -31,6 +32,7 @@ const Button: FC<IWebettiButtonProps> = ({
       feedback={feedback}
       onClick={onClick}
       textColor={textColor}
+      bold={bold}
     >
       {children}
     </Atom.Button>

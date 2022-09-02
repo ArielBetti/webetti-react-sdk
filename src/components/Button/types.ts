@@ -7,6 +7,7 @@ export interface IWebettiButtonProps
   variant?: "secondary" | "primary";
   feedback?: TWebettiButtonFeedback;
   onClick: (e?: any) => void | any;
+  bold?: boolean;
 }
 
 export type TWebettiButtonFeedback = "error" | "success" | "info" | "warning";
