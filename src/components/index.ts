@@ -8,6 +8,7 @@ import Heading from "./Heading";
 import Input from "./Input";
 import Modal from "./Modal";
 import Paragraph from "./Paragraph";
+import Stacker from "./Stacker";
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   Input,
   Modal,
   Paragraph,
+  Stacker,
 };

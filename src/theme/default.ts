@@ -41,4 +41,15 @@ export const defaultTheme = (): IWebettiTheme => ({
     time: "0.3s",
     type: "ease",
   },
+  spacing: {
+    xxxs: "4px",
+    xxs: "8px",
+    xs: "16px",
+    sm: "24px",
+    md: "32px",
+    lg: "40px",
+    xl: "48px",
+    xxl: "56px",
+    xxxl: "64px",
+  }
 });
