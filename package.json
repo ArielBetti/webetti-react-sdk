@@ -1,6 +1,6 @@
 {
   "name": "webetti-react-sdk",
-  "version": "1.0.39",
+  "version": "1.0.41",
   "description": "This package aims to accelerate the creation of robust react applications, it has generic components with theme integration.",
   "license": "MIT",
   "author": "ArielBetti",
@@ -34,14 +34,6 @@
     "dev__provider"
   ],
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@types/react-lazy-load-image-component": "^1.5.2",
-    "@types/styled-components": "^5.1.26",
-    "clear-path": "^1.3.2",
-    "typescript": "^4.4.2",
     "@babel/core": "^7.18.10",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
@@ -51,7 +43,16 @@
     "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^8.2.5"
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "@types/styled-components": "^5.1.26",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-styled-components": "^2.0.7",
+    "clear-path": "^1.3.2",
+    "typescript": "^4.4.2"
   },
   "scripts": {
     "build": "npm run clean && tsc --project tsconfig.json",
