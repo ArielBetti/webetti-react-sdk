@@ -1,6 +1,7 @@
 import { Container } from "./Container";
 import { HamburguerMenuItem } from "./HamburguerMenuItem";
 import Button from "./Button";
+import Drawer from "./Drawer";
 import Dropdown from "./Dropdown";
 import Flexbox from "./Flexbox";
 import HamburguerMenu from "./HamburguerMenu";
@@ -14,6 +15,7 @@ import Stacker from "./Stacker";
 export {
   Button,
   Container,
+  Drawer,
   Dropdown,
   Flexbox,
   HamburguerMenu,

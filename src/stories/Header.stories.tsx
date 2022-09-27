@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Button } from "../components";
+import { ReactNode, useState } from "react";
+import { Button, HamburguerMenu } from "../components";
 
 import Header from "../components/Header";
 import DevProvider from "../dev__provider";
@@ -16,9 +16,14 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args: any): ReactNode => {
+  const [open, setOpen] = useState<boolean>(true);
+
   return (
     <DevProvider>
       <Header {...args}>
+        <HamburguerMenu open={open} setOpen={setOpen} side="left" width="120px" >
+          a
+        </HamburguerMenu>
         <Button onClick={() => console.log("21")}>Testar</Button>
       </Header>
     </DevProvider>

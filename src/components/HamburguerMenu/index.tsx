@@ -13,6 +13,8 @@ const HamburguerMenu = ({
   children,
   open,
   setOpen,
+  side,
+  width,
 }: IWebettiHamburguerMenuProps) => {
   const { theme } = useWebettiContext();
 
@@ -25,7 +27,7 @@ const HamburguerMenu = ({
           <MdMenu color={theme?.font?.colors?.inverse} size="20px" />
         )}
       </Atom.HamburguerMenuToggle>
-      <Atom.HamburguerMenuCollapse isOpen={open}>
+      <Atom.HamburguerMenuCollapse width={width} side={side} isOpen={open}>
         {children}
       </Atom.HamburguerMenuCollapse>
     </>

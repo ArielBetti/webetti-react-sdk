@@ -4,9 +4,12 @@ export interface IWebettiHamburguerMenuProps {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   children: ReactNode;
-  label: string;
+  side?: "left" | "right";
+  width?: string;
 }
 
 export interface IWebettiHamburguerMenuCollapse {
   isOpen: boolean;
+  side?: "left" | "right";
+  width?: string;
 }

@@ -16,19 +16,19 @@ export const HamburguerMenuToggle = styled.div`
   cursor: pointer;
 `;
 
-export const HamburguerMenuCollapse = styled.div`
+export const HamburguerMenuCollapse = styled.div<IWebettiHamburguerMenuCollapse>`
   transition: ease 0.25s all;
   visibility: ${({ isOpen }: IWebettiHamburguerMenuCollapse) =>
     isOpen ? "visible" : "hidden"};
   opacity: ${({ isOpen }: IWebettiHamburguerMenuCollapse) => (isOpen ? 1 : 0)};
   position: absolute;
   top: 100%;
-  right: 0;
+  ${(props) => props?.side || "right"}: 0;
   min-height: 100vh;
   background-color: ${({ theme }: { theme: IWebettiTheme }) =>
     theme?.colors?.neutral?.pure};
-  min-width: ${({ isOpen }: IWebettiHamburguerMenuCollapse) =>
-    isOpen ? "50%" : "0%"};
+  min-width: ${({ isOpen, width }: IWebettiHamburguerMenuCollapse) =>
+    isOpen ? width || "50%" : "0%"};
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
   border-top: 2px solid
     ${({ theme }: { theme: IWebettiTheme }) => theme?.colors?.primary};
