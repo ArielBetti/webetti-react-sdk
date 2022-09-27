@@ -10,6 +10,7 @@ const Flexbox: FC<IWebettiFlexboxProps> = ({
   gap,
   justify,
   width,
+  wrap,
 }) => {
   return (
     <Atom.Flexbox
@@ -18,6 +19,7 @@ const Flexbox: FC<IWebettiFlexboxProps> = ({
       justify={justify}
       width={width}
       gap={gap}
+      wrap={wrap}
     >
       {children}
     </Atom.Flexbox>

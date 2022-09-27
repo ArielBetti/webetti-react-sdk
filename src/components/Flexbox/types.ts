@@ -19,11 +19,19 @@ export type TAlignItems =
   | "initial"
   | "inherit";
 
+export type IFlexWrap =
+  | "nowrap"
+  | "wrap"
+  | "wrap-reverse"
+  | "initial"
+  | "inherit";
+
 export interface IWebettiFlexboxProps {
   direction: "row" | "column";
   justify: TJustifyContent;
   align: TAlignItems;
   width?: "xsm" | "sm" | "md" | "lg" | "xl";
   gap?: "xxxs" | "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
-  children?: ReactNode,
+  wrap?: IFlexWrap,
+  children?: ReactNode;
 }
