@@ -5,16 +5,18 @@ import * as Atom from "./atoms";
 
 const Flexbox: FC<IWebettiFlexboxProps> = ({
   align,
-  direction,
-  justify,
-  gap,
   children,
+  direction,
+  gap,
+  justify,
+  width,
 }) => {
   return (
     <Atom.Flexbox
       align={align}
       direction={direction}
       justify={justify}
+      width={width}
       gap={gap}
     >
       {children}
